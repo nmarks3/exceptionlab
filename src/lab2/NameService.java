@@ -20,13 +20,14 @@ public class NameService {
      */
     
     /*
-    Validation: cannot be null, cannot be 
+    Validation: cannot be null, cannot be empty, cannot be one word
     */
     public String extractLastName(String fullName) throws IllegalArgumentException {
         if(fullName == null 
-                || fullName.isEmpty()) {
-            throw new IllegalArgumentException();
+                || fullName.isEmpty() || (fullName.split(" ")).length !=2) {
+            throw new IllegalArgumentException("cannot be empty");
         }
+        
         String[] nameParts = fullName.split(" ");
         String lastName = nameParts[nameParts.length - 1];
 

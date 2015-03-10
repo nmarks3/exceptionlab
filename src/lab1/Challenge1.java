@@ -36,10 +36,11 @@ public class Challenge1 {
         }
         
         String[] nameParts = fullName.split(" ");
-        String nameParts[nameParts.length - 1];
+        String lastName = nameParts[nameParts.length - 1];
         if(lastName.indexOf("-") > -1) {
             lastName = (lastName.split("-")[0]);
         }
+        return lastName;
     }
     
 
